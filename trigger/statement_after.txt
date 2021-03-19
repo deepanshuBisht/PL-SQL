@@ -1,0 +1,9 @@
+ create or replace 
+ trigger before_trigger
+ before insert on customer
+begin
+ dbms_output.put_line('Statement level trigger before inserting');
+ end;
+ /
+
+

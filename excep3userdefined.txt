@@ -1,0 +1,32 @@
+declare 
+  my_exception EXCEPTION;
+ c_name customer.name%type;
+c_id customer.cust_id%type:=&MYID;
+cursor c is select name,cust_id from customer where cust_id=c_id; 
+BEGIN
+
+if(c_id<=0)then
+RAISE my_exception;
+else
+open c;
+loop
+
+fetch c into  c_name,c_id;
+open c;
+DBMS_OUTPUT.PUT_LINE('Name'||c_name);
+DBMS_OUTPUT.PUT_LINE('Customer_id'||c_id);
+exit when c%notfound;
+end loop;
+END IF;
+close c;
+exceptioN
+
+WHEN NO_DATA_FOUND
+ THEN DBMS_OUTPUT.PUT_LINE('NO DATA');
+WHEN CURSOR_ALREADY_OPEN
+ THEN DBMS_OUTPUT.PUT_LINE('cursor is open');
+WHEN MY_EXCEPTION
+ THEN DBMS_OUTPUT.PUT_LINE('ID MUST BE GREATER THAN ZERO');
+END;
+/
+

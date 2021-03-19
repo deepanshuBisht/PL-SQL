@@ -1,0 +1,16 @@
+create or replace procedure product_details(cat_name in varchar)
+IS
+cursor c is select * from product p inner join category c where c=categ_id=p.cat_id;
+total number;
+product_rec product%ROWtype;
+begin
+open c;
+loop
+  fetch c into product_rec;
+EXIT WHEN C%NOTFOUND;
+   total :=  product_rec.price*product_rec.quantity;
+   dbms_output.put_line('Name: '||product_REC.prod_name||CHR(9)||'Total:'||chr(9)||total);
+END LOOP;
+close c;
+end;
+/

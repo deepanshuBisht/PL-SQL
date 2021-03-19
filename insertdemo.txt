@@ -1,0 +1,12 @@
+DECLARE 
+name varchar2(10):= 'Ram';
+id int:=1;
+age int := 29;
+address char(21) := 'chennai';
+salary float := 1000;
+
+begin
+insert into mycustomer values(name,id,age,address,salary);
+end;
+/
+

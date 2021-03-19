@@ -1,0 +1,25 @@
+declare
+
+c_REC employee%ROWtype;
+
+cursor c is select * from employee;
+BEGIN
+OPEN C;
+LOOP
+
+ fetch c into c_REC;
+EXIT WHEN C%NOTFOUND;
+   dbms_output.put_line(c_REC.emp_id||CHR(9)||c_REC.name||chr(9)||c_REC.salary||chr(9)||c_REC.department||chr(9)||c_REC.city);
+END LOOP;
+
+
+
+
+
+close c;
+end;
+/
+
+
+
+

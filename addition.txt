@@ -1,0 +1,9 @@
+declare
+x number;
+y number;
+sum1 number;
+begin
+ x:=3;y:=3;sum1:=x/y;
+  DBMS_OUTPUT.PUT_LINE ('sum is '||sum1);
+  end;
+/

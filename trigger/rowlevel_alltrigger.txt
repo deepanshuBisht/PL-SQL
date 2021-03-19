@@ -1,0 +1,8 @@
+ create or replace trigger rowlevel_before
+ after insert or update or delete on customer
+ 
+ for each row
+ begin
+ dbms_output.put_line('rowlevel trigger called .......');
+ end;
+ /

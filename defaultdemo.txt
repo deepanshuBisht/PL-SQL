@@ -1,0 +1,11 @@
+DECLARE
+
+	message varchar2(20) DEFAULT 'have a good day';
+	message1 varchar2(20) DEFAULT 'Its''hot';
+begin
+ dbms_output.put_line(message);
+ dbms_output.put_line(message1);
+ message :='goodbye';
+ dbms_output.put_line(message);
+end;
+/

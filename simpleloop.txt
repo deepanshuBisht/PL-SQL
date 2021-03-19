@@ -1,0 +1,16 @@
+declare 
+ a number :=1;
+begin
+  
+  LOOP
+     a:=a+1;
+    dbms_output.put_line(a);
+    exit when a>=10;
+  end loop;
+   dbms_output.put_line('LOOP TERMINATED');
+end;
+
+
+
+
+/

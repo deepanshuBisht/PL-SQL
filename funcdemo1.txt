@@ -1,0 +1,10 @@
+create  OR REPLACE FUNCTION getname( myid IN number)
+RETURN varchar
+IS
+stud_name varchar(20);
+BEGIN
+SELECT name into stud_name 
+FROM STUDENT where student_id = myid;
+RETURN stud_name;
+END;
+/

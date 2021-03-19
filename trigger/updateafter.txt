@@ -1,0 +1,9 @@
+ create or replace trigger cust_update_trigger
+ after update on customer
+ 
+ for each row
+ begin
+ dbms_output.put_line('before update'||:old.city);
+dbms_output.put_line('after updating  '||:new.city);
+ end;
+ /

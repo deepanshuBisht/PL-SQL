@@ -1,0 +1,9 @@
+ create or replace 
+ trigger student_update_before
+ before update on student
+ for each row 
+ begin
+insert into student values(22,'kun','chennai','09-oct-12');
+dbms_output.put_line('after updating  '||:new.name);
+ end;
+ /

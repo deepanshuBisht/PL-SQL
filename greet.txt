@@ -1,0 +1,6 @@
+create or replace procedure greetMessage
+is 
+begin
+dbms_output.put_line('welcome to procedures');
+end;
+/

@@ -1,0 +1,23 @@
+declare
+type markarray is varray(5) of int;
+marks markarray;
+total int;
+i int;
+begin
+marks :=markarray();
+total  :=0;
+for i in 1..4
+ loop
+marks.extend; -- to extend the array size
+marks(i):=&m;
+    dbms_output.put_line('Marks : '|| marks(i));
+ end loop;
+for i in 1..4
+ loop
+--marks.extend;
+ -- to extend the array size
+total:=marks(i)+total;
+ end loop;
+ dbms_output.put_line('Marks : '|| total);
+end;
+/

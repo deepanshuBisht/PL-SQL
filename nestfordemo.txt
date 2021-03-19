@@ -1,0 +1,16 @@
+declare
+
+ a number;
+ b number:=&b;
+ c number;
+begin
+ FOR a IN 1..10
+ LOOP
+ for c in reverse 1..b
+ loop
+  dbms_output.put_line('b: '|| c);
+ end loop;
+   dbms_output.put_line('a: '|| a);
+ end LOOP;
+end;
+/

@@ -1,0 +1,8 @@
+ create or replace 
+ trigger student_insert_after
+ after insert on student
+ for each row 
+ begin
+dbms_output.put_line('after inserting  '||:new.name);
+ end;
+ /

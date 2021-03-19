@@ -1,0 +1,18 @@
+create  OR REPLACE FUNCTION getTotalPrice( myitem IN varchar)
+RETURN number
+IS
+itemprice number;
+BEGIN
+SELECT (quantity*cost) into itemprice 
+FROM items1 where itemname = myitem;
+RETURN itemprice;
+END;
+/
+
+declare
+price number;
+iname varchar(20):='&name';
+begin
+price:=gettotalprice(iname);
+dbms_output.put_line(price);
+end;

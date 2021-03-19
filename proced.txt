@@ -1,0 +1,11 @@
+create or replace procedure findGreater(x in number, y in number,z out number)
+is
+begin
+if x>y then
+  z:=x;
+ else
+  z:=y;
+END IF;
+DBMS_OUTPUT.PUT_LINE('GREATER'||Z);
+END;
+/

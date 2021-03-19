@@ -1,0 +1,19 @@
+declare
+ numberofrows number;
+begin
+
+update employee set salary = 12000 where emp_id> 12;
+--delete from employee where emp_id = 12;
+if sql%notfound then
+
+ dbms_output.put_line('no employee selected');
+
+elsif sql%found then
+
+ numberofrows :=sql%rowcount;
+ dbms_output.put_line(numberofrows || '  rows updated');
+
+end if;
+
+end;
+/

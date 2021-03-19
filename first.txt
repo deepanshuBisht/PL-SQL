@@ -1,0 +1,6 @@
+DECLARE
+ a number:= &a;
+BEGIN
+   dbms_output.put_line('The number is '|| a); 
+END;
+/

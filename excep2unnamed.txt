@@ -1,0 +1,24 @@
+declare 
+  my_exception EXCEPTION;
+ c_name customer.name%type;
+c_id customer.cust_id%type:=&MYID;
+
+BEGIN
+if(c_id<=0)then
+RAISE my_exception;
+ELSE
+ select name,cust_id into c_name,c_id 
+ from customer where cust_ID=C_ID ;
+DBMS_OUTPUT.PUT_LINE('Name'||c_name);
+DBMS_OUTPUT.PUT_LINE('Customer_id'||c_id);
+END IF;
+exceptioN
+
+WHEN NO_DATA_FOUND
+ THEN DBMS_OUTPUT.PUT_LINE('NO DATA');
+
+WHEN MY_EXCEPTION
+ THEN DBMS_OUTPUT.PUT_LINE('ID MUST BE GREATER THAN ZERO');
+END;
+/
+

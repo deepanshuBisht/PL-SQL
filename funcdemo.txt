@@ -1,0 +1,16 @@
+create  OR REPLACE FUNCTION getstudents
+RETURN NUMBER 
+IS
+TOT NUMBER:=0;
+BEGIN
+SELECT COUNT(*) INTO TOT FROM customer;
+RETURN TOT;
+END;
+/
+declare
+a number;
+begin
+ a:=getstudents;
+DBMS_OUTPUT.PUT_LINE(getstudents);
+DBMS_OUTPUT.PUT_LINE(a);
+END;

@@ -1,0 +1,4 @@
+begin
+execute immediate 'create table sun(name varchar(10),sal integer)';
+commit;
+end;

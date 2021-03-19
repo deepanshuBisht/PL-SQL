@@ -1,0 +1,14 @@
+create or replace trigger newempl_log_trigger
+after insert or delete or update 
+on newemployee
+for each row 
+begin 
+ if inserting then
+dbms_output.put_line('hello'); 
+insert into newempl_log(log_id,empid,name,logintime,logouttime,total_hours) values (emp_seq.nextval,:new.empid,:new.name,:new.logintime,:new.logouttime,(:new.logouttime-:new.logintime)); 
+ elsif deleting then 
+ insert into customer_log(log_id,oldname,oldcity,logdate) values(mysequence.nextval, :old.name,:old.city,sysdate); 
+ else 
+ insert into customer_log(log_id,oldname,newname,oldcity,newcity,logdate) values(mysequence.nextval, :old.name,:new.name,:old.city,:new.city,sysdate); 
+ end if; 
+end;

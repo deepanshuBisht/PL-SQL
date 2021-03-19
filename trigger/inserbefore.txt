@@ -1,0 +1,10 @@
+ create or replace trigger stud_row_before
+ before insert or update or delete on student
+ 
+ for each row
+ begin
+ dbms_output.put_line('before updating '||:old.name||' '||:old.dept);
+ dbms_output.put_line('after updating '||:new.name||' '||:new.dept);
+ end;
+ /
+ 

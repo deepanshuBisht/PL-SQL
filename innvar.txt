@@ -1,0 +1,15 @@
+DECLARE 
+ A NUMBER:=10;
+ B NUMBER;
+BEGIN
+ B :=50;
+ DBMS_OUTPUT.PUT_LINE('SUM outer'|| (A+B));
+DECLARE 
+  c NUMBER:=1000;
+begin
+  DBMS_OUTPUT.PUT_LINE('SUM inner'|| (A+B+C));
+  DBMS_OUTPUT.PUT_LINE('SUM'|| (A+B));
+end;
+  
+END;
+/

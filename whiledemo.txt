@@ -1,0 +1,9 @@
+DECLARE
+   a number := 10;
+BEGIN
+   WHILE a <= 100 LOOP
+      dbms_output.put_line(' a: ' || a);
+      a := a + 10;
+   END LOOP;
+END;
+/

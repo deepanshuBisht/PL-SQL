@@ -1,0 +1,13 @@
+create or replace trigger student_before
+before update or insert on student
+begin
+ dbms_output.put_line('Statement level trigger called before updating');
+ end;
+ /
+
+create or replace trigger student_after
+after update on student
+begin
+ dbms_output.put_line('Statement level trigger called after updating');
+ end;
+ /

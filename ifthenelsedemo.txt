@@ -1,0 +1,15 @@
+DECLARE
+   a varchar(20) := 'red';
+BEGIN
+   IF ( a = 'red' ) THEN
+      dbms_output.put_line('red color' );
+   ELSIF ( a = 'pink' ) THEN
+      dbms_output.put_line('pink color' );
+   ELSIF ( a = 'yellow' ) THEN
+      dbms_output.put_line('yellow color' );
+   ELSE
+       dbms_output.put_line('no color selected');
+   END IF;
+   dbms_output.put_line('my color is '|| a); 
+END;
+/

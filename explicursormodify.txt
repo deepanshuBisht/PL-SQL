@@ -1,0 +1,29 @@
+declare
+
+c_rec employee%rowtype;
+cursor c is select * from employee;
+emp_id employee.emp_id%type;
+BEGIN
+OPEN C;
+emp_id:=20;
+loop
+
+ fetch c into c_rec;
+ exit when c%notfound;
+ dbms_output.put_line(c_rec.department); 
+--insert into employee values(c_rec.name,emp_id,c_rec.salary,c_rec.city,'Admin');
+
+if(c_rec.emp_id<20) then
+  update employee set salary =c_rec.salary*2 where emp_id =c_rec.emp_id ;
+end if;
+
+
+--emp_id:=emp_id+1; 
+end loop;
+close c;
+end;
+/
+
+
+
+

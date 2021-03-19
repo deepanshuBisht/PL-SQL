@@ -1,0 +1,21 @@
+declare
+
+c_REC mycustomer%ROWtype;
+
+cursor c is select * from mycustomer where age>20;
+BEGIN
+
+FOR C_REC IN C
+
+LOOP
+   dbms_output.put_line(c_REC.ID||c_REC.name||c_REC.age||c_REC.address||c_REC.salary);
+END LOOP;
+
+/* no need to open and close the cursor when we are using for loop*/
+
+end;
+/
+
+
+
+

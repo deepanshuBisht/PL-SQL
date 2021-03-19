@@ -1,0 +1,21 @@
+declare
+cid employee.emp_id%type;
+cname employee.name%type;
+ccity employee.city%type;
+csalary employee.salary%type;
+cdept employee.department%type;
+cursor c is select * from employee;
+BEGIN
+OPEN C;
+loop
+ fetch c into cname,cid,csalary,ccity,cdept;
+ exit when c%notfound;
+   dbms_output.put_line(cname||CHR(9)||cid||CHR(9) ||csalary||(CHR(9))||ccity);
+end loop;
+close c;
+end;
+/
+
+
+
+

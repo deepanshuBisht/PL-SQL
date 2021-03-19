@@ -1,0 +1,13 @@
+declare 
+ a number :=0;
+begin
+  
+  LOOP
+  dbms_output.put_line(a);
+   a:=a+2;
+      EXIt when a>20;
+
+  END LOOP;
+   dbms_output.put_line('LOOP TERMINATED'|| a);
+end;
+/

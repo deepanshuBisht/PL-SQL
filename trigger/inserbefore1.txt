@@ -1,0 +1,8 @@
+ create or replace 
+ trigger student_insert_bef
+ before insert on student
+ for each row
+ begin
+ dbms_output.put_line('before inserting  '||:new.name);
+ end;
+ /

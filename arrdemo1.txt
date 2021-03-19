@@ -1,0 +1,26 @@
+declare
+type namarr is varray(5) of varchar(10);
+type mararr is varray(5) of int;
+names namarr:= namarr();
+marks mararr:= mararr();
+total int;
+i int;
+begin
+
+total  := 4;
+for i in 1..total
+   names.extend;
+   marks.extend; 
+loop
+  
+   names(i) :='&n';
+   marks(i) := &m;
+ end loop;
+
+for i in 1..total
+ loop
+   dbms_output.put_line('Student Name : '|| names(i)||CHR(9)||marks(i));
+
+ end loop;
+end;
+/

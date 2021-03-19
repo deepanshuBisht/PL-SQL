@@ -1,0 +1,12 @@
+DECLARE
+ a number:=&a;
+ b number:=&b;
+ c number:=&c;
+BEGIN
+   IF ( a>b AND a>c ) THEN
+      dbms_output.put_line('red color' );
+
+   END IF;
+   dbms_output.put_line('my color is '|| a); 
+END;
+/

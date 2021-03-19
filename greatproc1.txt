@@ -1,0 +1,30 @@
+/* creating procedure */
+create or replace procedure findsum(x in number, y in number,z in number,msum out number)
+is
+begin
+msum :=x+y+z;
+DBMS_OUTPUT.PUT_LINE('Sum'||msum);
+END;
+/
+/* create a pl/sql block to call the procedure */
+declare 
+ a number:=&a;
+ b number:=&b;
+ c number:=&c;
+ d number;
+
+BEGIN
+FINDsum(A,B,C,d);
+end;
+
+
+
+ /*a:=34;
+ b:=50;
+*/
+--FINDGREATER(x=>A,y=>B,z=>C);
+FINDGREATER(A,B,C);
+FINDGREATER(A,b,z=>b);
+END;
+/
+*/
